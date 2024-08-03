@@ -10,7 +10,6 @@ namespace SleightOfHandPiggyVarietyPatch
     [BepInDependency("com.malco.lethalcompany.moreshipupgrades")]
     public class Plugin : BaseUnityPlugin
     {
-        internal const string ITEM_NAME = "Peeper";
         internal static readonly Harmony harmony = new(Metadata.GUID);
         internal static readonly ManualLogSource mls = BepInEx.Logging.Logger.CreateLogSource(Metadata.NAME);
 

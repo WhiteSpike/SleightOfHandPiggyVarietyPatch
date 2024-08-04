@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using MoreShipUpgrades.Misc.Upgrades;
 using MoreShipUpgrades.Misc.Util;
 using MoreShipUpgrades.UpgradeComponents.TierUpgrades.Items.Shotgun;
 using PiggyVarietyMod.Patches;
@@ -16,6 +17,7 @@ namespace SleightOfHandPiggyVarietyPatch.Patches
         [HarmonyPrefix]
         static void ReloadGunAnimationPrefix(M4Item __instance)
         {
+            if (!BaseUpgrade.GetActiveUpgrade(SleightOfHand.UPGRADE_NAME)) return;
             __instance.playerHeldBy.playerBodyAnimator.speed *= 2f + SleightOfHand.ComputeSleightOfHandSpeedBoost();
             __instance.gunAnimator.speed *= 2f + SleightOfHand.ComputeSleightOfHandSpeedBoost();
             __instance.StartCoroutine(waitToEndReloadAnimation(__instance));

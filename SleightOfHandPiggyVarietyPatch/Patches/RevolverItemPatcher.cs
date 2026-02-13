@@ -2,7 +2,7 @@
 using MoreShipUpgrades.Misc.Upgrades;
 using MoreShipUpgrades.Misc.Util;
 using MoreShipUpgrades.UpgradeComponents.TierUpgrades.Items.Shotgun;
-using PiggyVarietyMod.Patches;
+using PiggysVarietyMod;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -10,7 +10,8 @@ using UnityEngine;
 
 namespace SleightOfHandPiggyVarietyPatch.Patches
 {
-    [HarmonyPatch(typeof(RevolverItem))]
+    /*
+    [HarmonyPatch(typeof(PiggysVarietyMod.Items))]
     internal static class RevolverItemPatcher
     {
         [HarmonyPatch(nameof(RevolverItem.ReloadGunAnimation))]
@@ -47,4 +48,5 @@ namespace SleightOfHandPiggyVarietyPatch.Patches
             gun.gunAnimator.speed /= 2f + SleightOfHand.ComputeSleightOfHandSpeedBoost();
         }
     }
+    */
 }

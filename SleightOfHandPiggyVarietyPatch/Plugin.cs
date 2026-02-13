@@ -6,7 +6,7 @@ using SleightOfHandPiggyVarietyPatch.Patches;
 namespace SleightOfHandPiggyVarietyPatch
 {
     [BepInPlugin(Metadata.GUID,Metadata.NAME,Metadata.VERSION)]
-    [BepInDependency(PiggyVarietyMod.Plugin.modGUID)]
+    [BepInDependency(PiggysVarietyMod.MyPluginInfo.PLUGIN_GUID)]
     [BepInDependency("com.malco.lethalcompany.moreshipupgrades")]
     public class Plugin : BaseUnityPlugin
     {
@@ -17,8 +17,8 @@ namespace SleightOfHandPiggyVarietyPatch
         {
             harmony.PatchAll(typeof(M4ItemPatcher));
             mls.LogInfo("Patched the rifle succesfully");
-            harmony.PatchAll(typeof(RevolverItemPatcher));
-            mls.LogInfo("Patched the revolver successfully");
+            //harmony.PatchAll(typeof(RevolverItemPatcher));
+            //mls.LogInfo("Patched the revolver successfully");
 
             mls.LogInfo($"{Metadata.NAME} {Metadata.VERSION} has been loaded successfully.");
         }
